@@ -18,13 +18,13 @@ const screen = createStackNavigator({
       Registration:{
         screen:Registration,
         navigationOptions:{
-           
+           title:"hi there register !"
         }
       },
       Profile:{
-       screen:Profile
+       screen:Profile,
        navigationOptions:{
-        headerMode: 'none'
+         headerMode: 'none'
       }
      },
      
