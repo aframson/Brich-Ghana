@@ -1,0 +1,106 @@
+import {StyleSheet} from 'react-native';
+
+
+export const styles = StyleSheet.create({
+    input:{
+     backgroundColor:"#fff",
+     borderColor:"#b76c94",
+     marginTop:10
+    },
+    container:{
+     padding:10,
+     backgroundColor:'white',
+     height:'100%'
+    },
+    back:{
+       height:30,
+       width:100,
+       backgroundColor:'royalblue',
+       margin:20,
+       padding:5,
+       borderRadius:5
+    },
+    btxt:{
+       color:'white',
+       alignSelf:'center',
+       marginTop:3
+    },
+    regbutt:{
+        height:50,
+        width:300,
+        alignSelf:'center',
+        backgroundColor:'royalblue',
+        borderRadius:5,
+        marginTop:10
+    },
+    regtxt:{
+        color:'white',
+        fontSize:25,
+        alignSelf:"center",
+        marginTop:14
+    },
+    pp:{
+        padding:10,
+        backgroundColor:'white',
+        marginTop:30
+    },
+    con:{
+        backgroundColor:'#f1f1f1',
+        padding:10,
+        height:'100%'
+    },
+    uname:{
+        fontSize:30,
+        marginLeft:70,
+        marginTop:23,
+        position:'absolute'
+    },
+    pane1:{
+        marginTop:20,
+        backgroundColor:'white',
+        padding:10,
+        borderRadius:4,
+        display:'flex',
+        
+    },
+    uimg:{
+        height:50,
+        width:50
+    },
+  
+     input:{
+        backgroundColor:"#fff",
+        borderColor:"#b76c94",
+        marginTop:10
+       },
+       container:{
+         padding:10,
+         backgroundColor:'white',
+         height:'100%'
+       },
+       logo:{
+           height:100,
+           width:100,
+           alignSelf:'center',
+           marginTop:50
+       },
+       shift:{
+          marginTop:10
+       },
+       regbutt2:{
+        height:50,
+        width:300,
+        alignSelf:'center',
+        backgroundColor:'#0bb171',
+        borderRadius:5,
+        marginTop:10
+    },
+       regtxt:{
+           color:'white',
+           fontSize:25,
+           alignSelf:"center",
+           marginTop:14
+       }
+
+})
+

@@ -1,6 +1,8 @@
 import React,{ Component } from 'react';
-import { View,Text,StyleSheet,TouchableOpacity,ActivityIndicator,Platform } from 'react-native';
+import { View,Text,StyleSheet,TouchableOpacity,ActivityIndicator,Image } from 'react-native';
 import { Hoshi } from 'react-native-textinput-effects';
+import { styles } from '../UI'
+
 
 
 
@@ -11,11 +13,9 @@ export default class Login extends Component
     super();
 
       this.state = {
-          firstname:'',
-          lastname:'',
           username:'',
           password:'',
-          telephone:'',
+          usersData:'',
           loading: false, 
           disabled: false
       }
@@ -27,7 +27,7 @@ export default class Login extends Component
       this.setState({ loading: true, disabled: true }, () =>
       {
 
-        fetch('http://172.20.10.4/getreq/api.php',
+        fetch('http://172.20.10.6/getreq/fetch.php',
         {
             method:'POST',
             headers: 
@@ -37,19 +37,19 @@ export default class Login extends Component
             },
             body:JSON.stringify({
               
-                fname:this.state.firstname,
-
-                lname:this.state.lastname,
-
+          
                 uname:this.state.username,
 
                 pass:this.state.password,
 
-                tel:this.state.telephone
 
             })
           }).then((response)=>response.json()).then((resposJson) => {
-                 alert(resposJson);
+                
+                 this.setState({
+                    usersData:resposJson
+                 });
+                 this.props.navigation.navigate("Profile",{...this.state.usersData});
                  this.setState({loading:false,disabled:false})
           }).catch((error)=>{
                  alert(error);
@@ -72,7 +72,11 @@ export default class Login extends Component
        return(
           <View style={styles.container}> 
 
-           
+
+          <Image style={styles.logo} source={require('../assets/logo.png')} />
+
+          <View style={styles.shift}>
+         
              <Hoshi 
              label="username"
               onChangeText={(data)=>this.setState({username:data})}
@@ -90,10 +94,18 @@ export default class Login extends Component
           
             <TouchableOpacity disabled = { this.state.disabled }
              onPress={this.SendData}
+             style={styles.regbutt2}>
+                   <Text style={styles.regtxt}>Login</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity disabled = { this.state.disabled }
+             onPress={()=>{this.props.navigation.navigate('Registration')}}
              style={styles.regbutt}>
                    <Text style={styles.regtxt}>Register</Text>
             </TouchableOpacity>
 
+            </View>
+           
             {(this.state.loading)?(<ActivityIndicator/>):null}
 
              
@@ -111,28 +123,3 @@ export default class Login extends Component
 
 
 
-const styles = StyleSheet.create({
-     input:{
-      backgroundColor:"#fff",
-      borderColor:"#b76c94",
-      marginTop:10
-     },
-     container:{
-       padding:10
-     },
-     regbutt:{
-         height:50,
-         width:300,
-         alignSelf:'center',
-         backgroundColor:'royalblue',
-         borderRadius:5,
-         marginTop:40
-     },
-     regtxt:{
-         color:'white',
-         fontSize:25,
-         alignSelf:"center",
-         marginTop:14
-     }
-
-})

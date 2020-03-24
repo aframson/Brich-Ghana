@@ -1,17 +1,34 @@
 import Registration from './pages/register';
 import Login from './pages/login';
+import Profile from './pages/profile';
+
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 
 
 const screen = createStackNavigator({
 
-      Registration:{
-         screen:Registration
-      },
+  
       Login:{
-        screen:Login
+        screen:Login,
+        navigationOptions:{
+           
+        }
+      },
+      Registration:{
+        screen:Registration,
+        navigationOptions:{
+           
+        }
+      },
+      Profile:{
+       screen:Profile
+       navigationOptions:{
+        headerMode: 'none'
       }
+     },
+     
+
 
 })
 
