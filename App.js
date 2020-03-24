@@ -1,7 +1,7 @@
 import Registration from './pages/register';
 import Login from './pages/login';
 import {createStackNavigator} from 'react-navigation-stack';
-import { createAppContainer} from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
 
 
 const screen = createStackNavigator({
@@ -14,3 +14,9 @@ const screen = createStackNavigator({
       }
 
 })
+
+
+const render = createAppContainer(screen);
+
+
+export default render;
