@@ -27,7 +27,7 @@ export default class Registration extends Component
       this.setState({ loading: true, disabled: true }, () =>
       {
 
-        fetch('http://172.20.10.6/getreq/api.php',
+        fetch('http://172.20.10.4/getreq/api.php',
         {
             method:'POST',
             headers: 
@@ -72,6 +72,9 @@ export default class Registration extends Component
        return(
           <View style={styles.container}> 
 
+           <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Login")}} style={styles.back}>
+              <Text style={styles.btxt}>Login</Text>
+           </TouchableOpacity>
            
              <Hoshi 
                label="firstname"

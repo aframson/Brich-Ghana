@@ -10,27 +10,20 @@ const screen = createStackNavigator({
 
   
       Login:{
-        screen:Login,
-        navigationOptions:{
-           
-        }
+        screen:Login
       },
       Registration:{
-        screen:Registration,
-        navigationOptions:{
-           title:"hi there register !"
-        }
+        screen:Registration
       },
       Profile:{
-       screen:Profile,
-       navigationOptions:{
-         headerMode: 'none'
-      }
+       screen:Profile
      },
      
 
 
-})
+},{
+  headerMode: 'none'
+ })
 
 
 const render = createAppContainer(screen);

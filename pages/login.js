@@ -27,7 +27,7 @@ export default class Login extends Component
       this.setState({ loading: true, disabled: true }, () =>
       {
 
-        fetch('http://172.20.10.6/getreq/fetch.php',
+        fetch('http://172.20.10.4/getreq/fetch.php',
         {
             method:'POST',
             headers: 
