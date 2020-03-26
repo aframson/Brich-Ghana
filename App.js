@@ -17,7 +17,7 @@ const screen = createStackNavigator({
       },
       Profile:{
        screen:Profile
-     },
+      }
      
 
 
